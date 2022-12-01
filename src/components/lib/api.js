@@ -14,5 +14,5 @@ export const getCategoryContents = (categoryName) =>
     `https://www.themealdb.com/api/json/v1/1/filter.php?c=${categoryName}`
   );
 
-export const getSingleMeal = (mealId) =>
-  axios.get(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`);
+export const getSingleRecipe = (recipeId) =>
+  axios.get(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${recipeId}`);
