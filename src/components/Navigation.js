@@ -66,7 +66,7 @@ const DrawerHeader = styled('div')(({ theme }) => ({
   justifyContent: 'flex-end'
 }));
 
-const Landing = () => {
+const Landing = ({ children }) => {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
