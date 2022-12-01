@@ -4,7 +4,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 // import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import { getCategoryDetails } from './lib/api';
+import { getCategoryDetails } from '../lib/api';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -33,7 +33,12 @@ const CategoryCard = ({ name, imageUrl, description, id }) => {
             alt={`An image of a ${name.toLowerCase()} dish`}
           />
           <CardContent sx={{ paddingBottom: 0 }}>
-            <Typography gutterBottom variant="h5" component="div">
+            <Typography
+              align="center"
+              gutterBottom
+              variant="h5"
+              component="div"
+            >
               {name}
             </Typography>
             <Typography variant="body2" color="text.secondary">

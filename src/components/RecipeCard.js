@@ -4,7 +4,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 // import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import { getSingleRecipe } from './lib/api';
+import { getSingleRecipe } from '../lib/api';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
