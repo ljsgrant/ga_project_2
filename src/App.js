@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Landing from './components/Landing';
+import Navbar from './components/Navbar';
 import RecipeCard from './components/RecipeCard';
 import RecipeShow from './components/RecipeShow';
 import RecipesInCategory from './components/RecipesInCategory';
@@ -9,8 +9,9 @@ import AllCategories from './components/AllCategories';
 const App = () => {
   return (
     <BrowserRouter>
+      <Navbar />
       <Routes>
-        <Route path="/" element={<Landing />} />
+        <Route path="/" element={<p>hello</p>} />
         <Route path="/recipe-card" element={<RecipeCard />} />
         <Route path="/category-card" element={<CategoryCard />} />
         <Route
