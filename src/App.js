@@ -5,14 +5,14 @@ import RecipeShow from './components/RecipeShow';
 import RecipesInCategory from './components/RecipesInCategory';
 import CategoryCard from './components/CategoryCard';
 import AllCategories from './components/AllCategories';
-import CategoryHighlights from './components/CategoryHighlights';
+import Landing from './components/Landing';
 
 const App = () => {
   return (
     <Navigation>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<CategoryHighlights />} />
+          <Route path="/" element={<Landing />} />
           <Route path="/recipe-card" element={<RecipeCard />} />
           <Route path="/category-card" element={<CategoryCard />} />
           <Route path="/recipes/:recipeId" element={<RecipeShow />} />
