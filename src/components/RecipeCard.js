@@ -32,6 +32,6 @@ function RecipeCard({ name, imageUrl }) {
       </CardActions>
     </Card>
   );
-}
+};
 
 export default RecipeCard;
