@@ -39,9 +39,6 @@ const RecipeCard = ({ name, imageUrl, recipeId }) => {
             <Typography variant="body2" color="text.secondary">
               <span>{testRecipe.meals[0].strCategory}</span> ·
               <span> {testRecipe.meals[0].strArea}</span> |
-              <span>
-                <Link size="small"> Make this recipe</Link>
-              </span>
             </Typography>
           </CardContent>
           {/* <CardActions>
