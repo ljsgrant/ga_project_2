@@ -24,8 +24,8 @@ const RecipeCard = ({ name, imageUrl }) => {
 
   return (
     <>
-      <Card sx={{ maxWidth: 275 }}>
-        <CardMedia
+      <Card sx={{ maxWidth: 400, borderRadius: '20px' }}>
+        <CardMedia sx={{ maxHeight: 90 }}
           component="img"
           height="140"
           image={testMeal.meals[0].strMealThumb}
@@ -36,13 +36,11 @@ const RecipeCard = ({ name, imageUrl }) => {
             {testMeal.meals[0].strMeal}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
+            <span>{testMeal.meals[0].strCategory}</span> · <span>{testMeal.meals[0].strArea}</span>
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small">Share</Button>
-          <Button size="small">Learn More</Button>
+          <Button size="small">Make this recipe</Button>
         </CardActions>
       </Card>
     </>
