@@ -2,9 +2,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Landing from './components/Landing';
 import RecipeCard from './components/RecipeCard';
 import RecipeShow from './components/RecipeShow';
-import Category from './components/Category';
+import RecipesInCategory from './components/RecipesInCategory';
 import CategoryCard from './components/CategoryCard';
-import Categogies from './components/Categories';
+import AllCategories from './components/AllCategories';
 
 const App = () => {
   return (
@@ -17,8 +17,8 @@ const App = () => {
           path="/categories/:category/:recipeId"
           element={<RecipeShow />}
         />
-        <Route path="/categories/:category" element={<Category />} />
-        <Route path="/categories" element={<Categories />} />
+        <Route path="/categories/:category" element={<RecipesInCategory />} />
+        <Route path="/categories" element={<AllCategories />} />
       </Routes>
     </BrowserRouter>
   );
