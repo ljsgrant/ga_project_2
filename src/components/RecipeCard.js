@@ -4,9 +4,8 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import { getSingleMeal } from './lib/api';
 
-
-const { name, imageUrl } = 
 
 function RecipeCard({ name, imageUrl }) {
   return (
@@ -32,6 +31,6 @@ function RecipeCard({ name, imageUrl }) {
       </CardActions>
     </Card>
   );
-};
+}
 
 export default RecipeCard;
