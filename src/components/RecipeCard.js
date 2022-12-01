@@ -16,16 +16,11 @@ const RecipeCard = ({ name, imageUrl }) => {
       .catch((err) => console.error(err));
   }, []);
 
-  if (testMeal === null) {
-    return <p>Loading...</p>;
-  }
-
-  console.log(testMeal.meals[0].strMeal);
-
   return (
     <>
       <Card sx={{ maxWidth: 400, borderRadius: '20px' }}>
-        <CardMedia sx={{ maxHeight: 90 }}
+        <CardMedia
+          sx={{ maxHeight: 90 }}
           component="img"
           height="140"
           image={testMeal.meals[0].strMealThumb}
@@ -36,7 +31,8 @@ const RecipeCard = ({ name, imageUrl }) => {
             {testMeal.meals[0].strMeal}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            <span>{testMeal.meals[0].strCategory}</span> · <span>{testMeal.meals[0].strArea}</span>
+            <span>{testMeal.meals[0].strCategory}</span> ·{' '}
+            <span>{testMeal.meals[0].strArea}</span>
           </Typography>
         </CardContent>
         <CardActions>
