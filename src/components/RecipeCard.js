@@ -5,9 +5,6 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
-
-const { name, imageUrl } = 
-
 function RecipeCard({ name, imageUrl }) {
   return (
     <Card sx={{ maxWidth: 275 }}>
@@ -32,6 +29,6 @@ function RecipeCard({ name, imageUrl }) {
       </CardActions>
     </Card>
   );
-};
+}
 
 export default RecipeCard;
