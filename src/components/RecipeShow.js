@@ -63,6 +63,9 @@ const RecipeShow = () => {
         <Paper
           elevation={5}
           sx={{
+            backgroundImage: `url(${strMealThumb})`,
+            backgroundSize: 'cover',
+            color: 'white',
             width: '100%',
             display: 'flex',
             alignItems: 'center',
@@ -87,7 +90,8 @@ const RecipeShow = () => {
             xs: 'column',
             sm: 'column',
             md: 'column',
-            lg: 'row'
+            lg: 'row',
+            minHeight: '100%'
           },
           '& > :not(style)': {
             m: 1
@@ -100,7 +104,8 @@ const RecipeShow = () => {
             backgroundImage: `url(${strMealThumb})`,
             backgroundSize: 'cover',
             m: 0,
-            width: '35vw'
+            width: '45vw',
+            height: '80vh'
           }}
           alt={`an image of ${name}.`}
           src={strMealThumb}
