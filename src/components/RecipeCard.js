@@ -10,7 +10,7 @@ const RecipeCard = ({ strMeal, strMealThumb, idMeal }) => (
       <Card
         sx={{
           height: 210,
-          maxWidth: 400,
+          maxWidth: 500,
           borderRadius: '5px',
           backgroundImage: `radial-gradient(circle, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2) ), url(${strMealThumb})`,
           backgroundSize: 'cover',

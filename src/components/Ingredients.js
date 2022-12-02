@@ -17,7 +17,6 @@ const Ingredients = ({ ingredients }) => {
 
   return (
     <>
-      <h3>Ingredients</h3>
       <TableContainer component={Paper} sx={{ minWidth: 300, maxWidth: 400 }}>
         <Table size="small" aria-label="a dense table">
           <TableHead>
