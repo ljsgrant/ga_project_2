@@ -9,11 +9,22 @@ const Instructions = ({ strInstructions }) => {
   return (
     <>
       <h3>Method</h3>
-      <ul>
+
+      <Box
+        component="ul"
+        sx={{
+          padding: '10px',
+          listStyle: 'circle',
+          textAlign: 'justify'
+          // display: 'grid',
+          // gap: '30px',
+          // gridTemplateColumns: 'repeat(2, 1fr)'
+        }}
+      >
         {instructionsArray.map((step) => (
           <li key={step}>{step}</li>
         ))}
-      </ul>
+      </Box>
     </>
   );
 };
