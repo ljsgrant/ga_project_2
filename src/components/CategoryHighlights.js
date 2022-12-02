@@ -1,7 +1,7 @@
-// import { Typography } from '@mui/material';
-import { Box, Grid, Paper, Typography } from '@mui/material';
+import { Button, Grid, Paper, Typography } from '@mui/material';
 
 import { useState, useEffect } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import { getCategoryContents } from '../lib/api';
 import RecipeCard from './RecipeCard';
 
@@ -48,9 +48,10 @@ const CategoryHighlights = ({ strCategory }) => {
         <Typography variant="h5" sx={{ textTransform: 'uppercase' }}>
           best in <strong>{strCategory}</strong>
         </Typography>
-        <Typography sx={{ textTransform: 'uppercase' }}>
-          Uppercase Text.
-        </Typography>
+
+        <Link to={`/categories/${strCategory}`}>
+          <Button sx={{ textTransform: 'uppercase' }}>show more... </Button>
+        </Link>
       </Typography>
       <Grid container spacing={1} direction="row">
         {recipes.map((recipe) => (
