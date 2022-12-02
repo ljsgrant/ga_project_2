@@ -19,12 +19,10 @@ const CategoryCard = ({ name, imageUrl, id }) => {
     return <p>Loading...</p>;
   }
 
-  console.log(imageUrl);
-
   return (
     <>
       <CardActionArea>
-        <Link to={`/recipes/${id}`}>
+        <Link to={`/categories/${name}`}>
           <Card
             sx={{
               height: 210,

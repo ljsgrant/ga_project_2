@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { getCategoryContents } from '../lib/api';
-import CategoryCard from './CategoryCard';
+import RecipeCard from './RecipeCard';
 import { Typography } from '@mui/material';
 import { useParams } from 'react-router-dom';
 
@@ -38,11 +38,12 @@ const RecipesInCategory = () => {
         columns={13}
       >
         {currentCategory.meals.map((meal) => (
+          // <p key={meal.strMeal}>{meal.strMeal}</p>
           <Grid item key={meal.strMeal} xs={2}>
-            <CategoryCard
-              id={meal.idMeal}
-              name={meal.strMeal}
-              imageUrl={meal.strMealThumb}
+            <RecipeCard
+              strMeal={meal.strMeal}
+              strMealThumb={meal.strMealThumb}
+              idMeal={meal.idMeal}
             />
           </Grid>
         ))}
