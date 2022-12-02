@@ -1,12 +1,15 @@
+// import { Typography } from '@mui/material';
+import { Grid } from '@mui/material';
+
 import { useState, useEffect } from 'react';
 import { getCategoryContents } from '../lib/api';
 import RecipeCard from './RecipeCard';
 
-const CategoryHighlights = () => {
+const CategoryHighlights = ({ strCategory }) => {
   const [recipes, setRecipes] = useState(null);
 
   useEffect(() => {
-    getCategoryContents('Seafood')
+    getCategoryContents(strCategory)
       .then(({ data }) => {
         const selectedRecipes = data.meals.slice(0, 5);
         setRecipes(selectedRecipes);
@@ -19,11 +22,13 @@ const CategoryHighlights = () => {
   }
 
   return (
-    <div>
-      {recipes.map((meal) => (
-        <RecipeCard key={meal.idMeal} {...meal} />
+    <Grid container spacing={2} direction="row" alignItems="center">
+      {recipes.map((recipe) => (
+        <Grid item key={recipe.idMeal} xs={2.4}>
+          <RecipeCard {...recipe} />
+        </Grid>
       ))}
-    </div>
+    </Grid>
   );
 };
 
