@@ -2,6 +2,14 @@ import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getSingleRecipe } from '../lib/api';
 import Ingredients from './Ingredients';
+import Instructions from './Instructions';
+import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import Typography from '@mui/material/Typography';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 const RecipeShow = () => {
   const { recipeId } = useParams();
@@ -17,7 +25,7 @@ const RecipeShow = () => {
       .catch((err) => console.error(err));
   }, [recipeId]);
 
-  function ingredientsArray(wholeRecipe){
+  function ingredientsArray(wholeRecipe) {
     const ingredientsItems = Object.values(wholeRecipe).slice(9, 29);
     const ingredientsQuantities = Object.values(wholeRecipe).slice(29, 49);
     const combinedIngredients = [];
@@ -30,22 +38,88 @@ const RecipeShow = () => {
       }
     }
     return combinedIngredients;
-  };
-
-
+  }
 
   if (recipe === null) {
     return <p>Loading recipe... {}</p>;
   }
 
-  const { strMeal: name, strInstructions: method, strSource: source } = recipe;
+  const {
+    strMeal: name,
+    strInstructions,
+    strSource: source,
+    strMealThumb
+  } = recipe;
 
   return (
     <>
-      <p>
-        RecipeShow <br /> {name} <br /> {method} <br />{' '}
-      </p>
-      {recipe && <Ingredients ingredients={ingredients} />}
+      <p>{name}</p>
+
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: {
+            xs: 'column',
+            sm: 'column',
+            md: 'column',
+            lg: 'row'
+          },
+          '& > :not(style)': {
+            m: 1,
+            width: '100%',
+            height: 'auto'
+          }
+        }}
+      >
+        <Paper
+          elevation={5}
+          component="img"
+          sx={{
+            m: 0,
+            // height: 'auto',
+            // width: 600,
+            maxHeight: '80vh',
+            maxWidth: 'auto'
+
+            // maxHeight: { xs: 350, md: 600 }
+          }}
+          alt={`an image of ${name}.`}
+          src={strMealThumb}
+        />
+        <Box
+          sx={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            '& > :not(style)': {
+              m: 0,
+              width: '500',
+              height: 'auto',
+              padding: '30px'
+            }
+          }}
+        >
+          <Paper elevation={5}>
+            {recipe && <Instructions strInstructions={strInstructions} />}
+          </Paper>
+        </Box>
+        <Box
+          sx={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            '& > :not(style)': {
+              m: 0,
+              width: '500',
+              height: 'auto',
+              padding: '30px'
+            }
+          }}
+        >
+          <Paper elevation={5}>
+            {ingredients && <Ingredients ingredients={ingredients} />}
+          </Paper>
+        </Box>
+      </Box>
+
       <p>{source} </p>
       <br />
     </>

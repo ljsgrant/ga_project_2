@@ -16,27 +16,30 @@ const Ingredients = ({ ingredients }) => {
   ingredients.forEach((entry) => rows.push(createData(...entry)));
 
   return (
-    <TableContainer component={Paper} sx={{ minWidth: 300, maxWidth: 400 }} >
-      <Table size="small" aria-label="a dense table">
-        <TableHead>
-          <TableRow>
-            <TableCell>Item</TableCell>
-            <TableCell align="right">Quantity</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map((row) => (
-            <TableRow
-              key={row.ingredient}
-              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-            >
-              <TableCell align="right">{row.ingredient}</TableCell>
-              <TableCell align="right">{row.quantity}</TableCell>
+    <>
+      <h3>Ingredients</h3>
+      <TableContainer component={Paper} sx={{ minWidth: 300, maxWidth: 400 }}>
+        <Table size="small" aria-label="a dense table">
+          <TableHead>
+            <TableRow>
+              <TableCell>Item</TableCell>
+              <TableCell align="right">Quantity</TableCell>
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+          </TableHead>
+          <TableBody>
+            {rows.map((row) => (
+              <TableRow
+                key={row.ingredient}
+                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+              >
+                <TableCell align="right">{row.ingredient}</TableCell>
+                <TableCell align="right">{row.quantity}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </>
   );
 };
 
