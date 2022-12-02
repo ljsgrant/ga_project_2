@@ -11,7 +11,7 @@ const RecipeCard = ({ strMeal, strMealThumb, idMeal }) => (
       <Card
         sx={{
           height: 210,
-          maxWidth: 400,
+          maxWidth: 500,
           borderRadius: '5px'
         }}
       >
