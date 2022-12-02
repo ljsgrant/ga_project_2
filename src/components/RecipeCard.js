@@ -10,8 +10,7 @@ const RecipeCard = ({ strMeal, strMealThumb, idMeal }) => (
     <Link to={`/recipes/${idMeal}`}>
       <Card
         sx={{
-          height: 215,
-          minWidth: 300,
+          height: 210,
           maxWidth: 400,
           borderRadius: '5px'
         }}
@@ -23,7 +22,7 @@ const RecipeCard = ({ strMeal, strMealThumb, idMeal }) => (
           alt={strMeal}
         />
         <CardContent sx={{ paddingBottom: 0 }}>
-          <Typography gutterBottom variant="h5" component="div">
+          <Typography gutterBottom variant="h6" component="div">
             {strMeal}
           </Typography>
           {/* <Typography variant="body2" color="text.secondary">
