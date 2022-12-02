@@ -63,7 +63,8 @@ const RecipeShow = () => {
         <Paper
           elevation={5}
           sx={{
-            backgroundImage: `url(${strMealThumb})`,
+            backgroundImage: `radial-gradient(circle, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2) ), url(${strMealThumb})`,
+            // backgroundImage: `url(${strMealThumb})`,
             backgroundSize: 'cover',
             color: 'white',
             width: '100%',
