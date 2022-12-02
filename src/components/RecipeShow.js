@@ -5,11 +5,7 @@ import Ingredients from './Ingredients';
 import Instructions from './Instructions';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
-import Accordion from '@mui/material/Accordion';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 const RecipeShow = () => {
   const { recipeId } = useParams();
@@ -56,12 +52,6 @@ const RecipeShow = () => {
       <Box
         sx={{
           display: 'flex',
-          flexDirection: {
-            xs: 'column',
-            sm: 'column',
-            md: 'column',
-            lg: 'row'
-          },
           '& > :not(style)': {
             m: 1,
             mb: 0.5
@@ -74,7 +64,6 @@ const RecipeShow = () => {
           elevation={5}
           sx={{
             width: '100%',
-            // height: '5vh',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -102,63 +91,32 @@ const RecipeShow = () => {
           },
           '& > :not(style)': {
             m: 1
-            // width: '100%',
-            // height: 'auto'
           }
         }}
       >
         <Paper
           elevation={5}
-          // component="img"
           sx={{
             backgroundImage: `url(${strMealThumb})`,
             backgroundSize: 'cover',
             m: 0,
             width: '35vw'
-
-            // maxHeight: { xs: 350, md: 600 }
           }}
           alt={`an image of ${name}.`}
           src={strMealThumb}
         />
-        <Box
-          sx={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            '& > :not(style)': {
-              m: 0,
-              width: '500',
-              height: 'auto',
-              padding: '30px'
-            }
-          }}
-        >
-          <Paper elevation={5}>
-            <Typography variant="h5" component="h3">
-              Ingredients
-            </Typography>
-            {ingredients && <Ingredients ingredients={ingredients} />}
-          </Paper>
-        </Box>
-        <Box
-          sx={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            '& > :not(style)': {
-              m: 0,
-              width: '500',
-              height: 'auto',
-              padding: '30px'
-            }
-          }}
-        >
-          <Paper elevation={5}>
-            <Typography variant="h5" component="h3">
-              Method
-            </Typography>
-            {recipe && <Instructions strInstructions={strInstructions} />}
-          </Paper>
-        </Box>
+        <Paper elevation={5} sx={{ p: 5 }}>
+          <Typography variant="h5" component="h3" sx={{ mb: 1 }}>
+            Ingredients
+          </Typography>
+          {ingredients && <Ingredients ingredients={ingredients} />}
+        </Paper>
+        <Paper elevation={5} sx={{ p: 5 }}>
+          <Typography variant="h5" component="h3" sx={{ mb: 1 }}>
+            Method
+          </Typography>
+          {recipe && <Instructions strInstructions={strInstructions} />}
+        </Paper>
       </Box>
 
       <p>{source} </p>
