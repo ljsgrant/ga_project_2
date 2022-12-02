@@ -53,8 +53,6 @@ const RecipeShow = () => {
 
   return (
     <>
-      <p>{name}</p>
-
       <Box
         sx={{
           display: 'flex',
@@ -66,20 +64,57 @@ const RecipeShow = () => {
           },
           '& > :not(style)': {
             m: 1,
-            width: '100%',
-            height: 'auto'
+            mb: 0.5
+            // width: '100%',
+            // height: 'auto'
           }
         }}
       >
         <Paper
           elevation={5}
-          component="img"
           sx={{
+            width: '100%',
+            // height: '5vh',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            p: '10px'
+          }}
+        >
+          <Typography
+            variant="h3"
+            component="h2"
+            sx={{ textTransform: 'uppercase', fontWeight: 'bolder' }}
+          >
+            {name}
+          </Typography>
+        </Paper>
+      </Box>
+
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: {
+            xs: 'column',
+            sm: 'column',
+            md: 'column',
+            lg: 'row'
+          },
+          '& > :not(style)': {
+            m: 1
+            // width: '100%',
+            // height: 'auto'
+          }
+        }}
+      >
+        <Paper
+          elevation={5}
+          // component="img"
+          sx={{
+            backgroundImage: `url(${strMealThumb})`,
+            backgroundSize: 'cover',
             m: 0,
-            // height: 'auto',
-            // width: 600,
-            maxHeight: '80vh',
-            maxWidth: 'auto'
+            width: '35vw'
 
             // maxHeight: { xs: 350, md: 600 }
           }}
@@ -99,7 +134,10 @@ const RecipeShow = () => {
           }}
         >
           <Paper elevation={5}>
-            {recipe && <Instructions strInstructions={strInstructions} />}
+            <Typography variant="h5" component="h3">
+              Ingredients
+            </Typography>
+            {ingredients && <Ingredients ingredients={ingredients} />}
           </Paper>
         </Box>
         <Box
@@ -115,7 +153,10 @@ const RecipeShow = () => {
           }}
         >
           <Paper elevation={5}>
-            {ingredients && <Ingredients ingredients={ingredients} />}
+            <Typography variant="h5" component="h3">
+              Method
+            </Typography>
+            {recipe && <Instructions strInstructions={strInstructions} />}
           </Paper>
         </Box>
       </Box>

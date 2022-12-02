@@ -8,8 +8,6 @@ const Instructions = ({ strInstructions }) => {
 
   return (
     <>
-      <h3>Method</h3>
-
       <Box
         component="ul"
         sx={{
