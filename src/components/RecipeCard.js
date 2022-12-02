@@ -1,7 +1,6 @@
 import { CardActionArea } from '@mui/material';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Link } from 'react-router-dom';
 
@@ -12,25 +11,34 @@ const RecipeCard = ({ strMeal, strMealThumb, idMeal }) => (
         sx={{
           height: 210,
           maxWidth: 500,
-          borderRadius: '5px'
+          borderRadius: '5px',
+          backgroundImage: `radial-gradient(circle, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2) ), url(${strMealThumb})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          '&:hover': {
+            backgroundImage: `url(${strMealThumb})`
+          }
         }}
       >
-        <CardMedia
-          sx={{ maxHeight: 95 }}
-          component="img"
-          image={strMealThumb}
-          alt={strMeal}
-        />
-        <CardContent sx={{ paddingBottom: 0 }}>
-          <Typography gutterBottom variant="h6" component="div">
+        <CardContent
+          sx={{
+            width: '80%',
+            height: 1,
+            paddingBottom: 0,
+            color: 'white',
+            textShadow: '2px 2px 5px black',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center'
+          }}
+        >
+          <Typography textAlign="center" variant="h5">
             {strMeal}
           </Typography>
-          {/* <Typography variant="body2" color="text.secondary">
-            <span>{}</span> ·<span> {}</span> |
-          </Typography> */}
         </CardContent>
-        {/* <CardActions>
-        </CardActions> */}
       </Card>
     </Link>
   </CardActionArea>
