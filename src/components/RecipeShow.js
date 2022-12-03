@@ -27,7 +27,7 @@ const RecipeShow = () => {
     const ingredientsQuantities = Object.values(wholeRecipe).slice(29, 49);
     const combinedIngredients = [];
     for (let i = 0; i < ingredientsItems.length; i++) {
-      if (ingredientsItems[i] !== '') {
+      if (ingredientsItems[i] !== '' && ingredientsItems[i] !== null) {
         combinedIngredients.push([
           ingredientsItems[i],
           ingredientsQuantities[i]
