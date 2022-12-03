@@ -4,8 +4,6 @@ import Paper from '@mui/material/Paper';
 const Instructions = ({ strInstructions }) => {
   const instructionsArray = strInstructions.split('.');
 
-  console.log(instructionsArray);
-
   return (
     <>
       <Box

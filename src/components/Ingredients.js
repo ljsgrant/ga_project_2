@@ -28,7 +28,7 @@ const Ingredients = ({ ingredients }) => {
           <TableBody>
             {rows.map((row) => (
               <TableRow
-                key={row.ingredient}
+                key={`${row.ingredient + row.quantity}`}
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
               >
                 <TableCell align="right">{row.ingredient}</TableCell>

@@ -90,8 +90,8 @@ const RecipeShow = () => {
           minHeight: '100%',
           flexDirection: {
             xs: 'column',
-            sm: 'column',
-            md: 'column',
+            sm: 'row',
+            md: 'row',
             lg: 'row',
             xl: 'row'
           },
