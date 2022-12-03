@@ -17,7 +17,7 @@ const Ingredients = ({ ingredients }) => {
 
   return (
     <>
-      <TableContainer component={Paper} sx={{ minWidth: 300, maxWidth: 400 }}>
+      <TableContainer component={Paper} sx={{ width: '100%' }}>
         <Table size="small" aria-label="a dense table">
           <TableHead>
             <TableRow>
@@ -28,7 +28,7 @@ const Ingredients = ({ ingredients }) => {
           <TableBody>
             {rows.map((row) => (
               <TableRow
-                key={row.ingredient}
+                key={`${row.ingredient + row.quantity}`}
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
               >
                 <TableCell align="right">{row.ingredient}</TableCell>
