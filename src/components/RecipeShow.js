@@ -50,6 +50,7 @@ const RecipeShow = () => {
 
   return (
     <>
+      {/* Header */}
       <Box
         sx={{
           display: 'flex',
@@ -65,7 +66,6 @@ const RecipeShow = () => {
           elevation={5}
           sx={{
             backgroundImage: `radial-gradient(circle, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2) ), url(${strMealThumb})`,
-            // backgroundImage: `url(${strMealThumb})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             color: 'white',
@@ -73,7 +73,14 @@ const RecipeShow = () => {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            p: '10px'
+            textAlign: 'center',
+            height: {
+              xs: '80px',
+              sm: '300px',
+              md: '150px',
+              lg: '10px',
+              xl: '10px'
+            }
           }}
         >
           <Typography
@@ -86,6 +93,7 @@ const RecipeShow = () => {
         </Paper>
       </Box>
 
+      {/* Info (source etc) */}
       <Box
         sx={{
           display: 'flex',
@@ -97,17 +105,59 @@ const RecipeShow = () => {
           }
         }}
       >
-        <ImageDropdown
-          strMealThumb={strMealThumb}
-          ingredients={ingredients}
-          strMeal={name}
-          strInstructions={strInstructions}
-        />
+        <Paper
+          elevation={5}
+          sx={{
+            p: 1
+          }}
+        >
+          <Typography
+            variant="h7"
+            component="h3"
+            sx={{ mb: 0, textAlign: 'center' }}
+          >
+            Recipe from: {source}
+          </Typography>
+        </Paper>
       </Box>
 
+      {/* Accordion */}
       <Box
         sx={{
           display: 'flex',
+          '& > :not(style)': {
+            m: 1,
+            mb: 0.5,
+            width: '100%'
+            // height: 'auto'
+          }
+        }}
+      >
+        <Paper
+          elevation={5}
+          sx={{
+            p: 0
+          }}
+        >
+          <ImageDropdown
+            strMealThumb={strMealThumb}
+            ingredients={ingredients}
+            strMeal={name}
+            strInstructions={strInstructions}
+          />
+        </Paper>
+      </Box>
+
+      {/* Main content */}
+      <Box
+        sx={{
+          display: {
+            xs: 'none',
+            sm: 'none',
+            md: 'flex',
+            lg: 'flex',
+            xl: 'flex'
+          },
           minHeight: '100%',
           flexDirection: {
             xs: 'column',
@@ -125,6 +175,7 @@ const RecipeShow = () => {
           elevation={5}
           sx={{
             backgroundImage: `url(${strMealThumb})`,
+            backgroundPosition: 'center',
             backgroundSize: 'cover',
             m: 0,
             width: '45vw',
@@ -138,7 +189,6 @@ const RecipeShow = () => {
             }
           }}
           alt={`an image of ${name}.`}
-          src={strMealThumb}
         />
         <Paper elevation={5} sx={{ p: 5 }}>
           <Typography variant="h5" component="h3" sx={{ mb: 1 }}>
@@ -146,16 +196,25 @@ const RecipeShow = () => {
           </Typography>
           {ingredients && <Ingredients ingredients={ingredients} />}
         </Paper>
-        <Paper elevation={5} sx={{ p: 5 }}>
+        <Paper
+          elevation={5}
+          sx={{
+            p: 5,
+            flexBasis: {
+              xs: '80%',
+              sm: '90%',
+              md: '90%',
+              lg: 'flex',
+              xl: 'flex'
+            }
+          }}
+        >
           <Typography variant="h5" component="h3" sx={{ mb: 1 }}>
             Method
           </Typography>
           {recipe && <Instructions strInstructions={strInstructions} />}
         </Paper>
       </Box>
-
-      <p>{source} </p>
-      <br />
     </>
   );
 };

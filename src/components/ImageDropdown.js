@@ -8,10 +8,25 @@ import Ingredients from './Ingredients';
 import Box from '@mui/material/Box';
 import Instructions from './Instructions';
 
-const ImageDropdown = ({ strMealThumb, ingredients, strMeal, strInstructions }) => {
+const ImageDropdown = ({
+  strMealThumb,
+  ingredients,
+  strMeal,
+  strInstructions
+}) => {
   return (
     <div>
-      <Accordion>
+      {/* <Accordion
+        sx={{
+          display: {
+            xs: 'block',
+            sm: 'block',
+            md: 'none',
+            lg: 'none',
+            xl: 'none'
+          }
+        }}
+      >
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
@@ -36,7 +51,7 @@ const ImageDropdown = ({ strMealThumb, ingredients, strMeal, strInstructions }) 
             <img src={strMealThumb} alt={`An image of ${strMeal}`}></img>
           </Box>
         </AccordionDetails>
-      </Accordion>
+      </Accordion> */}
       <Accordion
         sx={{
           display: {
@@ -77,8 +92,10 @@ const ImageDropdown = ({ strMealThumb, ingredients, strMeal, strInstructions }) 
         >
           <Typography>Method</Typography>
         </AccordionSummary>
-        <AccordionDetails>
-          {strInstructions && <Instructions strInstructions={strInstructions} />}
+        <AccordionDetails sx={{ p: '0 40px' }}>
+          {strInstructions && (
+            <Instructions strInstructions={strInstructions} />
+          )}
         </AccordionDetails>
       </Accordion>
     </div>
