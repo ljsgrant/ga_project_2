@@ -127,7 +127,8 @@ const ResponsiveDrawer = ({ window, children }) => {
         sx={{
           flexGrow: 1,
           p: 3,
-          width: { xl: `calc(100% - ${drawerWidth}px)` }
+          width: { xl: `calc(100% - ${drawerWidth}px)` },
+          backgroundColor: '#F4F4F4'
         }}
       >
         <Toolbar />

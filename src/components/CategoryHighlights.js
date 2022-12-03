@@ -25,7 +25,6 @@ const CategoryHighlights = ({ strCategory }) => {
     <Paper
       elevation={8}
       sx={{
-        maxWidth: 1,
         minHeight: 300,
         display: 'flex',
         flexDirection: 'column',
@@ -47,7 +46,7 @@ const CategoryHighlights = ({ strCategory }) => {
       >
         <Typography variant="h5" sx={{ textTransform: 'uppercase' }}>
           best in{' '}
-          <Link className="test" to={`/categories/${strCategory}`}>
+          <Link to={`/categories/${strCategory}`}>
             <Typography
               variant="h5"
               component="span"
