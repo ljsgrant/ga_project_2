@@ -87,12 +87,13 @@ const RecipeShow = () => {
       <Box
         sx={{
           display: 'flex',
+          minHeight: '100%',
           flexDirection: {
             xs: 'column',
             sm: 'column',
             md: 'column',
             lg: 'row',
-            minHeight: '100%'
+            xl: 'row'
           },
           '& > :not(style)': {
             m: 1
@@ -106,7 +107,14 @@ const RecipeShow = () => {
             backgroundSize: 'cover',
             m: 0,
             width: '45vw',
-            height: '80vh'
+            height: '80vh',
+            display: {
+              xs: 'none',
+              sm: 'none',
+              md: 'none',
+              lg: 'flex',
+              xl: 'flex'
+            }
           }}
           alt={`an image of ${name}.`}
           src={strMealThumb}
