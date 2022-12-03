@@ -1,7 +1,7 @@
 import { Button, Grid, Paper, Typography } from '@mui/material';
 
 import { useState, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { getCategoryContents } from '../lib/api';
 import RecipeCard from './RecipeCard';
 
@@ -46,14 +46,36 @@ const CategoryHighlights = ({ strCategory }) => {
         gutterBottom
       >
         <Typography variant="h5" sx={{ textTransform: 'uppercase' }}>
-          best in <strong>{strCategory}</strong>
+          best in{' '}
+          <Link className="test" to={`/categories/${strCategory}`}>
+            <Typography
+              variant="h5"
+              component="span"
+              sx={{ color: '#C17171', '&:hover': { color: 'black' } }}
+            >
+              <strong>{strCategory}</strong>
+            </Typography>
+          </Link>
         </Typography>
 
         <Link to={`/categories/${strCategory}`}>
-          <Button sx={{ textTransform: 'uppercase' }}>show more... </Button>
+          <Button
+            sx={{
+              textTransform: 'uppercase',
+              color: '#C17171',
+              display: { xs: 'none', sm: 'initial' }
+            }}
+          >
+            show more...
+          </Button>
         </Link>
       </Typography>
-      <Grid container spacing={1} direction="row">
+      <Grid
+        container
+        spacing={1}
+        direction="row"
+        columns={{ xs: 3, sm: 6, md: 12 }}
+      >
         {recipes.map((recipe) => (
           <Grid item key={recipe.idMeal} xs={3}>
             <RecipeCard {...recipe} />
