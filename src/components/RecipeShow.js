@@ -6,6 +6,7 @@ import Instructions from './Instructions';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
+import ImageDropdown from './ImageDropdown';
 
 const RecipeShow = () => {
   const { recipeId } = useParams();
@@ -66,6 +67,7 @@ const RecipeShow = () => {
             backgroundImage: `radial-gradient(circle, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2) ), url(${strMealThumb})`,
             // backgroundImage: `url(${strMealThumb})`,
             backgroundSize: 'cover',
+            backgroundPosition: 'center',
             color: 'white',
             width: '100%',
             display: 'flex',
@@ -82,6 +84,20 @@ const RecipeShow = () => {
             {name}
           </Typography>
         </Paper>
+      </Box>
+
+      <Box
+        sx={{
+          display: 'flex',
+          '& > :not(style)': {
+            m: 1,
+            mb: 0.5,
+            width: '100%'
+            // height: 'auto'
+          }
+        }}
+      >
+        <ImageDropdown strMealThumb={strMealThumb} ingredients={ingredients} strMeal={name}/>
       </Box>
 
       <Box

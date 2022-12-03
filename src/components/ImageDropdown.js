@@ -1,48 +1,85 @@
-const ImageDropdown = () => {
-<div>
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import Typography from '@mui/material/Typography';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import Paper from '@mui/material/Paper';
+import Ingredients from './Ingredients';
+import Box from '@mui/material/Box';
+
+const ImageDropdown = ({ strMealThumb, ingredients, strMeal }) => {
+  return (
+    <div>
       <Accordion>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography>Accordion 1</Typography>
+          <Typography>Image</Typography>
         </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget.
-          </Typography>
+        <AccordionDetails
+          sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            p: 0
+          }}
+        >
+          <Box
+            sx={{
+              width: '100%',
+              display: 'flex',
+              justifyContent: 'center'
+            }}
+          >
+            <img src={strMealThumb} alt={`An image of ${strMeal}`} ></img>
+          </Box>
         </AccordionDetails>
       </Accordion>
-      <Accordion>
+      <Accordion
+        sx={{
+          display: {
+            xs: 'block',
+            sm: 'block',
+            md: 'none',
+            lg: 'none',
+            xl: 'none'
+          }
+        }}
+      >
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel2a-content"
           id="panel2a-header"
         >
-          <Typography>Accordion 2</Typography>
+          <Typography>Ingredients</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget.
-          </Typography>
+          {ingredients && <Ingredients ingredients={ingredients} />}
         </AccordionDetails>
       </Accordion>
-      <Accordion disabled>
+      <Accordion
+        sx={{
+          display: {
+            xs: 'block',
+            sm: 'block',
+            md: 'none',
+            lg: 'none',
+            xl: 'none'
+          }
+        }}
+      >
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel3a-content"
-          id="panel3a-header"
+          aria-controls="panel2a-content"
+          id="panel2a-header"
         >
-          <Typography>Disabled Accordion</Typography>
+          <Typography>Method</Typography>
         </AccordionSummary>
+        <AccordionDetails></AccordionDetails>
       </Accordion>
     </div>
-
-
-
+  );
 };
 
 export default ImageDropdown;
