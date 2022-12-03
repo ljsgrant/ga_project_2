@@ -6,8 +6,9 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Paper from '@mui/material/Paper';
 import Ingredients from './Ingredients';
 import Box from '@mui/material/Box';
+import Instructions from './Instructions';
 
-const ImageDropdown = ({ strMealThumb, ingredients, strMeal }) => {
+const ImageDropdown = ({ strMealThumb, ingredients, strMeal, strInstructions }) => {
   return (
     <div>
       <Accordion>
@@ -32,7 +33,7 @@ const ImageDropdown = ({ strMealThumb, ingredients, strMeal }) => {
               justifyContent: 'center'
             }}
           >
-            <img src={strMealThumb} alt={`An image of ${strMeal}`} ></img>
+            <img src={strMealThumb} alt={`An image of ${strMeal}`}></img>
           </Box>
         </AccordionDetails>
       </Accordion>
@@ -76,7 +77,9 @@ const ImageDropdown = ({ strMealThumb, ingredients, strMeal }) => {
         >
           <Typography>Method</Typography>
         </AccordionSummary>
-        <AccordionDetails></AccordionDetails>
+        <AccordionDetails>
+          {strInstructions && <Instructions strInstructions={strInstructions} />}
+        </AccordionDetails>
       </Accordion>
     </div>
   );

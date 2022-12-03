@@ -97,7 +97,12 @@ const RecipeShow = () => {
           }
         }}
       >
-        <ImageDropdown strMealThumb={strMealThumb} ingredients={ingredients} strMeal={name}/>
+        <ImageDropdown
+          strMealThumb={strMealThumb}
+          ingredients={ingredients}
+          strMeal={name}
+          strInstructions={strInstructions}
+        />
       </Box>
 
       <Box
