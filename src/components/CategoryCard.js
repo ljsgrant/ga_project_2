@@ -1,14 +1,12 @@
 import Card from '@mui/material/Card';
-// import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-// import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { getCategoryDetails } from '../lib/api';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { CardActionArea } from '@mui/material';
 
-const CategoryCard = ({ name, imageUrl, description, id }) => {
+const CategoryCard = ({ name, imageUrl, id }) => {
   const [testCategory, setTestCategory] = useState(null);
 
   useEffect(() => {
@@ -23,7 +21,44 @@ const CategoryCard = ({ name, imageUrl, description, id }) => {
 
   return (
     <>
-      <Card sx={{ maxWidth: 400, borderRadius: '5px' }}>
+      <CardActionArea>
+        <Link to={`/categories/${name}`}>
+          <Card
+            sx={{
+              height: 210,
+              maxWidth: 500,
+              borderRadius: '5px',
+              backgroundImage: `radial-gradient(circle, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2) ), url(${imageUrl})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              '&:hover': {
+                backgroundImage: `url(${imageUrl})`
+              }
+            }}
+          >
+            <CardContent
+              sx={{
+                width: '80%',
+                height: 1,
+                paddingBottom: 0,
+                color: 'white',
+                textShadow: '2px 2px 5px black',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center'
+              }}
+            >
+              <Typography textAlign="center" variant="h5">
+                {name}
+              </Typography>
+            </CardContent>
+          </Card>
+        </Link>
+      </CardActionArea>
+      {/* <Card sx={{ maxWidth: 400, borderRadius: '5px' }}>
         <Link>
           <CardMedia
             sx={{ maxHeight: 400 }}
@@ -47,8 +82,8 @@ const CategoryCard = ({ name, imageUrl, description, id }) => {
           </CardContent>
           {/* <CardActions>
         </CardActions> */}
-        </Link>
-      </Card>
+      {/* </Link>
+      </Card> */}{' '}
     </>
   );
 };
