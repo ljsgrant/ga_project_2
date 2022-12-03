@@ -1,3 +1,4 @@
+import { Box, Grid } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { getCategoryNames } from '../lib/api';
 import CategoryHighlights from './CategoryHighlights';
@@ -16,11 +17,13 @@ const Landing = () => {
   }
 
   return (
-    <>
+    <Box container display="grid" gridTemplateColumns="repeat(12, 1fr)" gap={3}>
       {categories.map((category) => (
-        <CategoryHighlights key={category.strCategory} {...category} />
+        <Box gridColumn="span 12" key={category.strCategory} xs={12}>
+          <CategoryHighlights {...category} />
+        </Box>
       ))}
-    </>
+    </Box>
   );
 };
 
