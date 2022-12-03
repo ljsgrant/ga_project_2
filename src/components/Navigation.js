@@ -28,7 +28,7 @@ const ResponsiveDrawer = ({ window, children }) => {
       <Toolbar />
       <Divider />
       <List>
-        {['All Categories', 'Starred', 'Send email', 'Drafts'].map((text) => (
+        {['All Categories'].map((text) => (
           <ListItem key={text} disablePadding>
             <ListItemButton>
               <ListItemText
@@ -41,7 +41,7 @@ const ResponsiveDrawer = ({ window, children }) => {
       </List>
       <Divider />
       <List>
-        {['All mail', 'Trash', 'Spam'].map((text) => (
+        {['Recipes'].map((text) => (
           <ListItem key={text} disablePadding>
             <ListItemButton>
               <ListItemText
@@ -64,8 +64,8 @@ const ResponsiveDrawer = ({ window, children }) => {
       <AppBar
         position="fixed"
         sx={{
-          width: { md: `calc(100% - ${drawerWidth}px)` },
-          ml: { md: `${drawerWidth}px` },
+          width: { xl: `calc(100% - ${drawerWidth}px)` },
+          ml: { xl: `${drawerWidth}px` },
           backgroundColor: '#C17171'
         }}
       >
@@ -75,7 +75,7 @@ const ResponsiveDrawer = ({ window, children }) => {
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { md: 'none' } }}
+            sx={{ mr: 2, display: { xl: 'none' } }}
           >
             <MenuIcon />
           </IconButton>
@@ -86,7 +86,7 @@ const ResponsiveDrawer = ({ window, children }) => {
       </AppBar>
       <Box
         component="nav"
-        sx={{ width: { md: drawerWidth }, flexShrink: { md: 0 } }}
+        sx={{ width: { xl: drawerWidth }, flexShrink: { xl: 0 } }}
         aria-label="mailbox folders"
       >
         {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
@@ -99,7 +99,7 @@ const ResponsiveDrawer = ({ window, children }) => {
             keepMounted: true // Better open performance on mobile.
           }}
           sx={{
-            display: { xs: 'block', md: 'none' },
+            display: { xs: 'block', xl: 'none' },
             '& .MuiDrawer-paper': {
               boxSizing: 'border-box',
               width: drawerWidth
@@ -111,7 +111,7 @@ const ResponsiveDrawer = ({ window, children }) => {
         <Drawer
           variant="permanent"
           sx={{
-            display: { xs: 'none', md: 'block' },
+            display: { xs: 'none', xl: 'block' },
             '& .MuiDrawer-paper': {
               boxSizing: 'border-box',
               width: drawerWidth
@@ -127,7 +127,7 @@ const ResponsiveDrawer = ({ window, children }) => {
         sx={{
           flexGrow: 1,
           p: 3,
-          width: { md: `calc(100% - ${drawerWidth}px)` }
+          width: { xl: `calc(100% - ${drawerWidth}px)` }
         }}
       >
         <Toolbar />

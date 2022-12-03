@@ -17,7 +17,7 @@ const Landing = () => {
   }
 
   return (
-    <Box container display="grid" gridTemplateColumns="repeat(12, 1fr)" gap={3}>
+    <Box display="grid" gridTemplateColumns="repeat(12, 1fr)" gap={3}>
       {categories.map((category) => (
         <Box gridColumn="span 12" key={category.strCategory} xs={12}>
           <CategoryHighlights {...category} />
