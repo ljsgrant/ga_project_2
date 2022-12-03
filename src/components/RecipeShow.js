@@ -46,7 +46,8 @@ const RecipeShow = () => {
     strMeal: name,
     strInstructions,
     strSource: source,
-    strMealThumb
+    strMealThumb,
+    strCategory
   } = recipe;
 
   return (
@@ -62,8 +63,6 @@ const RecipeShow = () => {
             display: 'flex',
             '& > :not(style)': {
               mb: 1
-              // width: '100%',
-              // height: 'auto'
             }
           }}
         >
@@ -112,10 +111,16 @@ const RecipeShow = () => {
         <Box
           sx={{
             display: 'flex',
+            flexDirection: {
+              xs: 'column',
+              sm: 'column',
+              md: 'row',
+              lg: 'row',
+              xl: 'row'
+            },
             '& > :not(style)': {
               mb: 1,
               width: '100%'
-              // height: 'auto'
             }
           }}
         >
@@ -123,7 +128,13 @@ const RecipeShow = () => {
             <Paper
               elevation={5}
               sx={{
+                width: {
+                  xs: '100%',
+                  sm: '100%',
+                  md: '99%'
+                },
                 p: 1,
+                mr: 1,
                 backgroundColor: '#C17171',
                 color: 'white',
                 '&:hover': {
@@ -141,6 +152,30 @@ const RecipeShow = () => {
               </Typography>
             </Paper>
           </a>
+          <Link to={`/categories/${strCategory}`}>
+            <Paper
+              elevation={5}
+              sx={{
+                p: 1,
+                width: '100%',
+                backgroundColor: '#C17171',
+                color: 'white',
+                '&:hover': {
+                  backgroundColor: '#f7d2d2',
+                  color: 'black'
+                }
+              }}
+            >
+              <Typography
+                variant="h7"
+                component="h3"
+                sx={{ mb: 0, textAlign: 'center' }}
+              >
+                See other <strong>{strCategory.toLowerCase()}</strong> recipes
+                &#8680;
+              </Typography>
+            </Paper>
+          </Link>
         </Box>
 
         {/* Accordion */}
@@ -150,7 +185,6 @@ const RecipeShow = () => {
             '& > :not(style)': {
               mb: 0.5,
               width: '100%'
-              // height: 'auto'
             }
           }}
         >
@@ -187,9 +221,7 @@ const RecipeShow = () => {
               lg: 'row',
               xl: 'row'
             },
-            '& > :not(style)': {
-              // m: 1
-            }
+            '& > :not(style)': {}
           }}
         >
           <Paper
@@ -214,7 +246,8 @@ const RecipeShow = () => {
           <Paper
             elevation={5}
             sx={{
-              p: 5,
+              display: 'inline-block',
+              p: 2.5,
               mr: 1,
               flexBasis: {
                 xs: '40%',
@@ -225,7 +258,11 @@ const RecipeShow = () => {
               }
             }}
           >
-            <Typography variant="h5" component="h3" sx={{ mb: 1 }}>
+            <Typography
+              variant="h5"
+              component="h3"
+              sx={{ mb: 1, textAlign: 'center' }}
+            >
               Ingredients
             </Typography>
             {ingredients && <Ingredients ingredients={ingredients} />}
@@ -234,6 +271,7 @@ const RecipeShow = () => {
             elevation={5}
             sx={{
               p: 5,
+              pt: 2.5,
               flexBasis: {
                 xs: '80%',
                 sm: '90%',
@@ -243,7 +281,11 @@ const RecipeShow = () => {
               }
             }}
           >
-            <Typography variant="h5" component="h3" sx={{ mb: 1 }}>
+            <Typography
+              variant="h5"
+              component="h3"
+              sx={{ mb: 1, textAlign: 'center' }}
+            >
               Method
             </Typography>
             {recipe && <Instructions strInstructions={strInstructions} />}

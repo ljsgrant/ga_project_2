@@ -2,7 +2,9 @@ import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 
 const Instructions = ({ strInstructions }) => {
-  const instructionsArray = strInstructions.split('.');
+  const instructionsArray = strInstructions
+    .split('.')
+    .filter((instruction) => instruction !== '');
 
   return (
     <>
