@@ -16,42 +16,6 @@ const ImageDropdown = ({
 }) => {
   return (
     <div>
-      {/* <Accordion
-        sx={{
-          display: {
-            xs: 'block',
-            sm: 'block',
-            md: 'none',
-            lg: 'none',
-            xl: 'none'
-          }
-        }}
-      >
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel1a-content"
-          id="panel1a-header"
-        >
-          <Typography>Image</Typography>
-        </AccordionSummary>
-        <AccordionDetails
-          sx={{
-            display: 'flex',
-            justifyContent: 'center',
-            p: 0
-          }}
-        >
-          <Box
-            sx={{
-              width: '100%',
-              display: 'flex',
-              justifyContent: 'center'
-            }}
-          >
-            <img src={strMealThumb} alt={`An image of ${strMeal}`}></img>
-          </Box>
-        </AccordionDetails>
-      </Accordion> */}
       <Accordion
         sx={{
           display: {
@@ -68,7 +32,7 @@ const ImageDropdown = ({
           aria-controls="panel2a-content"
           id="panel2a-header"
         >
-          <Typography>Ingredients</Typography>
+          <Typography sx={{ fontWeight: 'bold' }}>Ingredients</Typography>
         </AccordionSummary>
         <AccordionDetails>
           {ingredients && <Ingredients ingredients={ingredients} />}
@@ -90,7 +54,7 @@ const ImageDropdown = ({
           aria-controls="panel2a-content"
           id="panel2a-header"
         >
-          <Typography>Method</Typography>
+          <Typography sx={{ fontWeight: 'bold' }}>Method</Typography>
         </AccordionSummary>
         <AccordionDetails sx={{ p: '0 40px' }}>
           {strInstructions && (
