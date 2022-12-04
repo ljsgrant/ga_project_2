@@ -59,6 +59,7 @@ const CategoryHighlights = ({ strCategory }) => {
 
         <Link to={`/categories/${strCategory}`}>
           <Button
+            component="p"
             sx={{
               textTransform: 'uppercase',
               color: '#C17171',

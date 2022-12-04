@@ -1,11 +1,10 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navigation from './components/Navigation';
-import RecipeCard from './components/RecipeCard';
 import RecipeShow from './components/RecipeShow';
 import RecipesInCategory from './components/RecipesInCategory';
-import CategoryCard from './components/CategoryCard';
 import AllCategories from './components/AllCategories';
 import Landing from './components/Landing';
+import Search from './components/Search';
 import { useState, useEffect } from 'react';
 import { getCategoryNames } from './lib/api';
 
@@ -23,18 +22,21 @@ const App = () => {
   }
 
   return (
-    <Navigation>
-      <BrowserRouter>
+    <BrowserRouter>
+      <Navigation categories={categories}>
         <Routes>
           <Route path="/" element={<Landing categories={categories} />} />
-          <Route path="/recipe-card" element={<RecipeCard />} />
-          <Route path="/category-card" element={<CategoryCard />} />
+          <Route path="/search" element={<Search />} />
           <Route path="/recipes/:recipeId" element={<RecipeShow />} />
           <Route path="/categories/:category" element={<RecipesInCategory />} />
           <Route path="/categories" element={<AllCategories />} />
+          <Route
+            path="/*"
+            element={<p>Oooops, looks like this page doesn&apos;t exist...</p>}
+          />
         </Routes>
-      </BrowserRouter>
-    </Navigation>
+      </Navigation>
+    </BrowserRouter>
   );
 };
 
