@@ -13,10 +13,11 @@ import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
+import { Link } from 'react-router-dom';
 
 const drawerWidth = 240;
 
-const ResponsiveDrawer = ({ window, children }) => {
+const ResponsiveDrawer = ({ window, categories, children }) => {
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
@@ -28,28 +29,65 @@ const ResponsiveDrawer = ({ window, children }) => {
       <Toolbar />
       <Divider />
       <List>
-        {['All Categories'].map((text) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemText
-                primary={text}
-                sx={{ textTransform: 'uppercase' }}
-              />
-            </ListItemButton>
-          </ListItem>
+        {['Home'].map((text) => (
+          <Link to={'/'} key={'home'}>
+            <ListItem key={text} disablePadding>
+              <ListItemButton>
+                <ListItemText
+                  primary={text}
+                  sx={{ textTransform: 'uppercase' }}
+                />
+              </ListItemButton>
+            </ListItem>
+          </Link>
         ))}
       </List>
       <Divider />
       <List>
-        {['Recipes'].map((text) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemText
-                primary={text}
-                sx={{ textTransform: 'uppercase' }}
-              />
-            </ListItemButton>
-          </ListItem>
+        {['Search All Recipes'].map((text) => (
+          <Link to={'/search'} key={'search'}>
+            <ListItem key={text} disablePadding>
+              <ListItemButton>
+                <ListItemText
+                  primary={text}
+                  sx={{ textTransform: 'uppercase' }}
+                />
+              </ListItemButton>
+            </ListItem>
+          </Link>
+        ))}
+      </List>
+      <Divider />
+      <List>
+        {['All Categories'].map((text) => (
+          <Link to={'/categories'} key={'categories'}>
+            <ListItem key={text} disablePadding>
+              <ListItemButton>
+                <ListItemText
+                  primary={text}
+                  sx={{ textTransform: 'uppercase' }}
+                />
+              </ListItemButton>
+            </ListItem>
+          </Link>
+        ))}
+      </List>
+      <Divider />
+      <List>
+        {categories.map((category) => (
+          <Link
+            to={`/categories/${category.strCategory}`}
+            key={category.strCategory}
+          >
+            <ListItem disablePadding>
+              <ListItemButton>
+                <ListItemText
+                  primary={category.strCategory}
+                  sx={{ textTransform: 'uppercase' }}
+                />
+              </ListItemButton>
+            </ListItem>
+          </Link>
         ))}
       </List>
     </div>
@@ -128,6 +166,7 @@ const ResponsiveDrawer = ({ window, children }) => {
           flexGrow: 1,
           p: 3,
           width: { xl: `calc(100% - ${drawerWidth}px)` },
+          minHeight: '100vh',
           backgroundColor: '#F4F4F4'
         }}
       >

@@ -16,7 +16,7 @@ const RecipesInCategory = () => {
         setCurrentCategory(data.meals);
       })
       .catch(({ response }) => console.error(response));
-  }, []);
+  }, [category]);
 
   if (currentCategory === null) {
     return <p>Loading...</p>;
