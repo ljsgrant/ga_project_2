@@ -1,7 +1,5 @@
-import { CardActionArea } from '@mui/material';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import Typography from '@mui/material/Typography';
+import { Card, CardContent, Typography, CardActionArea } from '@mui/material';
+
 import { Link } from 'react-router-dom';
 
 const RecipeCard = ({ strMeal, strMealThumb, idMeal }) => (
@@ -12,7 +10,7 @@ const RecipeCard = ({ strMeal, strMealThumb, idMeal }) => (
           height: 210,
           maxWidth: 500,
           borderRadius: '5px',
-          backgroundImage: `radial-gradient(circle, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2) ), url(${strMealThumb})`,
+          backgroundImage: `radial-gradient(circle, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)), url(${strMealThumb})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           display: 'flex',

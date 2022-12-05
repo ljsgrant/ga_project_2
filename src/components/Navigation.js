@@ -1,100 +1,28 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import CssBaseline from '@mui/material/CssBaseline';
-import Divider from '@mui/material/Divider';
-import Drawer from '@mui/material/Drawer';
-import IconButton from '@mui/material/IconButton';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
+import {
+  AppBar,
+  Box,
+  CssBaseline,
+  Drawer,
+  IconButton,
+  Toolbar,
+  Typography
+} from '@mui/material';
+
 import MenuIcon from '@mui/icons-material/Menu';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import { Link } from 'react-router-dom';
-import { Accordion, AccordionDetails, AccordionSummary } from '@mui/material';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import RamenDiningRoundedIcon from '@mui/icons-material/RamenDiningRounded';
+
+import { useState } from 'react';
+
+import NavDrawer from './NavDrawer';
 
 const drawerWidth = 240;
 
-const ResponsiveDrawer = ({ window, categories, children }) => {
-  const [mobileOpen, setMobileOpen] = React.useState(false);
+const Navigation = ({ window, categories, children }) => {
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
-
-  const drawer = (
-    <>
-      <Toolbar />
-      <Divider />
-      <List>
-        <Link to={'/'}>
-          <ListItem disablePadding>
-            <ListItemButton>
-              <ListItemText primary="HOME" sx={{ color: '#414141' }} />
-            </ListItemButton>
-          </ListItem>
-        </Link>
-        <Divider sx={{ m: '8px 0' }} />
-        <Link to={'/search'}>
-          <ListItem disablePadding>
-            <ListItemButton>
-              <ListItemText primary="SEARCH PAGE" sx={{ color: '#414141' }} />
-            </ListItemButton>
-          </ListItem>
-        </Link>
-        <Divider sx={{ m: '8px 0' }} />
-        <Link to={'/categories'}>
-          <ListItem disablePadding>
-            <ListItemButton>
-              <ListItemText
-                primary="ALL CATEGORIES"
-                sx={{ color: '#414141' }}
-              />
-            </ListItemButton>
-          </ListItem>
-        </Link>
-      </List>
-      <Divider />
-      <div>
-        <Accordion disableGutters elevation={0} sx={{ p: '8px 0' }}>
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls="panel1a-content"
-            id="panel1a-header"
-          >
-            CATEGORIES
-          </AccordionSummary>
-          <AccordionDetails sx={{ marginTop: '-20px' }}>
-            <List>
-              {categories.map((category) => (
-                <Link
-                  to={`/categories/${category.strCategory}`}
-                  key={category.strCategory}
-                >
-                  <ListItem disablePadding>
-                    <ListItemButton>
-                      <ListItemText
-                        primary={category.strCategory}
-                        sx={{
-                          textTransform: 'uppercase',
-                          color: '#8F4B4B'
-                        }}
-                      />
-                    </ListItemButton>
-                  </ListItem>
-                </Link>
-              ))}
-            </List>
-          </AccordionDetails>
-        </Accordion>
-        <Divider />
-      </div>
-    </>
-  );
 
   const container =
     window !== undefined ? () => window().document.body : undefined;
@@ -107,7 +35,7 @@ const ResponsiveDrawer = ({ window, categories, children }) => {
         sx={{
           width: { xl: `calc(100% - ${drawerWidth}px)` },
           ml: { xl: `${drawerWidth}px` },
-          backgroundColor: '#C17171'
+          bgcolor: '#C17171'
         }}
       >
         <Toolbar>
@@ -120,6 +48,9 @@ const ResponsiveDrawer = ({ window, categories, children }) => {
           >
             <MenuIcon />
           </IconButton>
+          <Typography component="div" noWrap sx={{ mr: '22px' }}>
+            <RamenDiningRoundedIcon fontSize="large" />
+          </Typography>
           <Typography variant="h6" noWrap>
             RECIPE FINDER
           </Typography>
@@ -127,10 +58,12 @@ const ResponsiveDrawer = ({ window, categories, children }) => {
       </AppBar>
       <Box
         component="nav"
-        sx={{ width: { xl: drawerWidth }, flexShrink: { xl: 0 } }}
+        sx={{
+          width: { xl: drawerWidth },
+          flexShrink: { xl: 0 }
+        }}
         aria-label="mailbox folders"
       >
-        {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
         <Drawer
           container={container}
           variant="temporary"
@@ -147,7 +80,7 @@ const ResponsiveDrawer = ({ window, categories, children }) => {
             }
           }}
         >
-          {drawer}
+          {<NavDrawer categories={categories} />}
         </Drawer>
         <Drawer
           variant="permanent"
@@ -160,7 +93,7 @@ const ResponsiveDrawer = ({ window, categories, children }) => {
           }}
           open
         >
-          {drawer}
+          {<NavDrawer categories={categories} />}
         </Drawer>
       </Box>
       <Box
@@ -170,7 +103,7 @@ const ResponsiveDrawer = ({ window, categories, children }) => {
           p: 3,
           width: { xl: `calc(100% - ${drawerWidth}px)` },
           minHeight: '100vh',
-          backgroundColor: '#F4F4F4'
+          bgcolor: '#F4F4F4'
         }}
       >
         <Toolbar />
@@ -180,12 +113,4 @@ const ResponsiveDrawer = ({ window, categories, children }) => {
   );
 };
 
-ResponsiveDrawer.propTypes = {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
-  window: PropTypes.func
-};
-
-export default ResponsiveDrawer;
+export default Navigation;

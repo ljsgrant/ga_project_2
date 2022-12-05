@@ -1,9 +1,9 @@
+import { Typography, Paper, Grid } from '@mui/material';
+
 import { useState, useEffect } from 'react';
+
 import { getCategoryDetails } from '../lib/api';
 import CategoryCard from './CategoryCard';
-import { Paper, Typography } from '@mui/material';
-
-import { Grid } from '@mui/material';
 
 const AllCategories = () => {
   const [categories, setCategories] = useState(null);
