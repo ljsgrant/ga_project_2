@@ -3,15 +3,11 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import Paper from '@mui/material/Paper';
 import Ingredients from './Ingredients';
-import Box from '@mui/material/Box';
 import Instructions from './Instructions';
 
 const ImageDropdown = ({
-  strMealThumb,
   ingredients,
-  strMeal,
   strInstructions
 }) => {
   return (

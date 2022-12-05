@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
+
+import { Paper, Grid, TextField } from '@mui/material';
+
 import { getCategoryContents } from '../lib/api';
 import RecipeCard from './RecipeCard';
-import { Paper, Grid, TextField } from '@mui/material';
 
 const Search = ({ categories }) => {
   const [allRecipes, setAllRecipes] = useState(null);

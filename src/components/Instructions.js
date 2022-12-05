@@ -1,5 +1,4 @@
 import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
 
 const Instructions = ({ strInstructions }) => {
   const instructionsArray = strInstructions
@@ -14,9 +13,6 @@ const Instructions = ({ strInstructions }) => {
           padding: '10px',
           listStyle: 'circle',
           textAlign: 'justify'
-          // display: 'grid',
-          // gap: '30px',
-          // gridTemplateColumns: 'repeat(2, 1fr)'
         }}
       >
         {instructionsArray.map((step) => (
