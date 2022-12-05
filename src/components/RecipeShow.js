@@ -1,13 +1,14 @@
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+
 import { getSingleRecipe } from '../lib/api';
 import Ingredients from './Ingredients';
 import Instructions from './Instructions';
+import ImageDropdown from './ImageDropdown';
+
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
-import ImageDropdown from './ImageDropdown';
-import { Link } from 'react-router-dom';
 
 const RecipeShow = () => {
   const { recipeId } = useParams();
@@ -78,12 +79,13 @@ const RecipeShow = () => {
               alignItems: 'center',
               justifyContent: 'center',
               textAlign: 'center',
-              height: {
+              p: '10px 20px',
+              minHeight: {
                 xs: '300px',
                 sm: '300px',
-                md: '190px',
-                lg: '90px',
-                xl: '90px'
+                md: '50vh',
+                lg: '90px'
+                // xl: '90px'
               }
             }}
           >
@@ -96,9 +98,7 @@ const RecipeShow = () => {
                 fontSize: {
                   xs: '200%',
                   sm: '275%',
-                  md: '350%',
-                  lg: '400%',
-                  xl: '400%'
+                  md: '350%'
                 }
               }}
             >
@@ -124,7 +124,7 @@ const RecipeShow = () => {
             }
           }}
         >
-          <a href={`${source}`}>
+          <a href={`${source}`} target="_blank" rel="noreferrer">
             <Paper
               elevation={5}
               sx={{
