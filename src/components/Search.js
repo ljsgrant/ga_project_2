@@ -1,33 +1,24 @@
 import { useState, useEffect } from 'react';
-import { getCategoryNames, getCategoryContents } from '../lib/api';
+import { getCategoryContents } from '../lib/api';
 import RecipeCard from './RecipeCard';
 import { Paper, Grid, TextField } from '@mui/material';
 
-const Search = () => {
+const Search = ({ categories }) => {
   const [allRecipes, setAllRecipes] = useState(null);
   const [searchString, setSearchString] = useState('');
   const [searchResults, setSearchResults] = useState(null);
 
   useEffect(() => {
-    getCategoryNames()
-      .then((response) => {
-        const allCategories = response.data.meals.map(
-          (meal) => meal.strCategory
-        );
-        return allCategories;
-      })
-      .then((allCategories) => {
-        let recipes = [];
-        allCategories.forEach((category) => {
-          getCategoryContents(category)
-            .then((response) => {
-              recipes = [...recipes, ...response.data.meals];
-              setAllRecipes(recipes);
-            })
-            .catch((err) => console.error(err));
-        });
-      })
-      .catch((err) => console.error(err));
+    const categoryNames = categories.map((category) => category.strCategory);
+    let recipes = [];
+    categoryNames.forEach((category) => {
+      getCategoryContents(category)
+        .then((response) => {
+          recipes = [...recipes, ...response.data.meals];
+          setAllRecipes(recipes);
+        })
+        .catch((err) => console.error(err));
+    });
   }, []);
 
   useEffect(() => {
