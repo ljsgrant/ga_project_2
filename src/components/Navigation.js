@@ -14,6 +14,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import { Link } from 'react-router-dom';
+import { Accordion, AccordionDetails, AccordionSummary } from '@mui/material';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 const drawerWidth = 240;
 
@@ -25,72 +27,73 @@ const ResponsiveDrawer = ({ window, categories, children }) => {
   };
 
   const drawer = (
-    <div>
+    <>
       <Toolbar />
       <Divider />
       <List>
-        {['Home'].map((text) => (
-          <Link to={'/'} key={'home'}>
-            <ListItem key={text} disablePadding>
-              <ListItemButton>
-                <ListItemText
-                  primary={text}
-                  sx={{ textTransform: 'uppercase' }}
-                />
-              </ListItemButton>
-            </ListItem>
-          </Link>
-        ))}
+        <Link to={'/'}>
+          <ListItem disablePadding>
+            <ListItemButton>
+              <ListItemText primary="HOME" sx={{ color: '#414141' }} />
+            </ListItemButton>
+          </ListItem>
+        </Link>
+        <Divider sx={{ m: '8px 0' }} />
+        <Link to={'/search'}>
+          <ListItem disablePadding>
+            <ListItemButton>
+              <ListItemText primary="SEARCH PAGE" sx={{ color: '#414141' }} />
+            </ListItemButton>
+          </ListItem>
+        </Link>
+        <Divider sx={{ m: '8px 0' }} />
+        <Link to={'/categories'}>
+          <ListItem disablePadding>
+            <ListItemButton>
+              <ListItemText
+                primary="ALL CATEGORIES"
+                sx={{ color: '#414141' }}
+              />
+            </ListItemButton>
+          </ListItem>
+        </Link>
       </List>
       <Divider />
-      <List>
-        {['Search All Recipes'].map((text) => (
-          <Link to={'/search'} key={'search'}>
-            <ListItem key={text} disablePadding>
-              <ListItemButton>
-                <ListItemText
-                  primary={text}
-                  sx={{ textTransform: 'uppercase' }}
-                />
-              </ListItemButton>
-            </ListItem>
-          </Link>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {['All Categories'].map((text) => (
-          <Link to={'/categories'} key={'categories'}>
-            <ListItem key={text} disablePadding>
-              <ListItemButton>
-                <ListItemText
-                  primary={text}
-                  sx={{ textTransform: 'uppercase' }}
-                />
-              </ListItemButton>
-            </ListItem>
-          </Link>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {categories.map((category) => (
-          <Link
-            to={`/categories/${category.strCategory}`}
-            key={category.strCategory}
+      <div>
+        <Accordion disableGutters elevation={0} sx={{ p: '8px 0' }}>
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel1a-content"
+            id="panel1a-header"
           >
-            <ListItem disablePadding>
-              <ListItemButton>
-                <ListItemText
-                  primary={category.strCategory}
-                  sx={{ textTransform: 'uppercase' }}
-                />
-              </ListItemButton>
-            </ListItem>
-          </Link>
-        ))}
-      </List>
-    </div>
+            CATEGORIES
+          </AccordionSummary>
+          <AccordionDetails sx={{ marginTop: '-20px' }}>
+            <List>
+              {categories.map((category) => (
+                <Link
+                  to={`/categories/${category.strCategory}`}
+                  key={category.strCategory}
+                >
+                  <ListItem disablePadding>
+                    <ListItemButton>
+                      <ListItemText
+                        primary={category.strCategory}
+                        sx={{
+                          textTransform: 'uppercase',
+                          color: '#8F4B4B'
+                        }}
+                      />
+                    </ListItemButton>
+                  </ListItem>
+                </Link>
+              ))}
+            </List>
+          </AccordionDetails>
+        </Accordion>
+        <Divider />
+      </div>
+    </>
   );
 
   const container =
