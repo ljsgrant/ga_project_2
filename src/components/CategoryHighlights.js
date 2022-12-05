@@ -2,6 +2,7 @@ import { Button, Grid, Paper, Typography } from '@mui/material';
 
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+
 import { getCategoryContents } from '../lib/api';
 import RecipeCard from './RecipeCard';
 
@@ -72,7 +73,7 @@ const CategoryHighlights = ({ strCategory }) => {
       </Typography>
       <Grid
         container
-        spacing={1}
+        spacing={1.5}
         direction="row"
         columns={{ xs: 3, sm: 6, md: 12 }}
       >

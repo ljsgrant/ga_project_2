@@ -1,4 +1,5 @@
 import { Box } from '@mui/material';
+
 import CategoryHighlights from './CategoryHighlights';
 
 const Landing = ({ categories }) => (

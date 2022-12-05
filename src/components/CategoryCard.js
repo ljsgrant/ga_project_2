@@ -1,8 +1,6 @@
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import Typography from '@mui/material/Typography';
+import { Card, CardContent, Typography, CardActionArea } from '@mui/material';
+
 import { Link } from 'react-router-dom';
-import { CardActionArea } from '@mui/material';
 
 const CategoryCard = ({ strCategory, strCategoryThumb }) => (
   <CardActionArea>

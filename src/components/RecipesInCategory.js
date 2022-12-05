@@ -1,10 +1,10 @@
+import { Grid, Paper, Typography } from '@mui/material';
+
+import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+
 import { getCategoryContents } from '../lib/api';
 import RecipeCard from './RecipeCard';
-import { Paper, Typography } from '@mui/material';
-import { useParams } from 'react-router-dom';
-
-import { Grid } from '@mui/material';
 
 const RecipesInCategory = () => {
   const { category } = useParams();
