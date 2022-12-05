@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { getCategoryDetails } from '../lib/api';
 import CategoryCard from './CategoryCard';
-import { Typography } from '@mui/material';
+import { Paper, Typography } from '@mui/material';
 
 import { Grid } from '@mui/material';
 
@@ -20,31 +20,31 @@ const AllCategories = () => {
     return <p>Loading...</p>;
   }
 
-  console.log(categories);
-
   return (
-    <>
-      <Typography align="center" gutterBottom variant="h5" component="div">
-        Select from the following categories to see dishes:
+    <Paper elevation={8} sx={{ width: 1, padding: '15px', bgcolor: '#FAFAFA' }}>
+      <Typography variant="h5" gutterBottom>
+        ALL{' '}
+        <Typography
+          variant="h5"
+          component="span"
+          sx={{ color: '#C17171', fontWeight: 'bold' }}
+        >
+          CATEGORIES
+        </Typography>
       </Typography>
       <Grid
         container
-        spacing={5}
+        spacing={1.5}
         direction="row"
-        justifyContent="center"
-        alignItems="center"
-        columns={13}
+        columns={{ xs: 3, sm: 6, md: 9, lg: 12 }}
       >
         {categories.map((category) => (
-          <Grid item key={category.idCategory} xs={2}>
-            <CategoryCard
-              name={category.strCategory}
-              imageUrl={category.strCategoryThumb}
-            />
+          <Grid item key={category.idCategory} xs={3}>
+            <CategoryCard {...category} />
           </Grid>
         ))}
       </Grid>
-    </>
+    </Paper>
   );
 };
 
