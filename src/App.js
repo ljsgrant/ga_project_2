@@ -26,7 +26,7 @@ const App = () => {
       <Navigation categories={categories}>
         <Routes>
           <Route path="/" element={<Landing categories={categories} />} />
-          <Route path="/search" element={<Search />} />
+          <Route path="/search" element={<Search categories={categories} />} />
           <Route path="/recipes/:recipeId" element={<RecipeShow />} />
           <Route path="/categories/:category" element={<RecipesInCategory />} />
           <Route path="/categories" element={<AllCategories />} />
