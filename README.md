@@ -10,6 +10,9 @@ We built this in a team of two, after just over a week of learning React. It was
 
 https://louis-recipefinder.netlify.app/￼
 
+![Main page](/readme_assets/project-2-recipe.png)
+![Main page](/readme_assets/project-2-main-page.png)
+
 <br />
 
 ---
