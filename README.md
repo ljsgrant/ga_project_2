@@ -6,9 +6,9 @@ Recipe Finder is an app to help users decide what to cook next, for a quiet dinn
 
 We built this in a team of two, after just over a week of learning React. It was my first experience using React to build a full front-end app, as well as my first experience using the Material UI component library. The app consumes TheMealDB, a public REST API, and was built over 4 days.
 
-### Link to deployed site:
+### Link to deployed site: https://louis-recipefinder.netlify.app/
 
-https://louis-recipefinder.netlify.app/￼
+<br/>
 
 ![Main page](/readme_assets/project-2-recipe.png)
 ![Main page](/readme_assets/project-2-main-page.png)
