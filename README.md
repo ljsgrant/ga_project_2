@@ -6,7 +6,7 @@ Recipe Finder is an app to help users decide what to cook next, for a quiet dinn
 
 We built this in a team of two, after just over a week of learning React. It was my first experience using React to build a full front-end app, as well as my first experience using the Material UI component library. The app consumes TheMealDB, a public REST API, and was built over 4 days.
 
-### Link to deployed site: https://louis-recipefinder.netlify.app/
+### Link to deployed site: [louis-recipefinder.netlify.app](https://louis-recipefinder.netlify.app/)
 
 <br/>
 
@@ -299,7 +299,7 @@ const filterRecipes = () => {
 };
 ```
 
-Initially I called this function in the same `useEffect` where we get the API data, but of course this is unnecessary – we’re processing our data on the front end, so there is no need to get the same data every time the user changes the query. I split this out into two `useEffect`s, one to fetch the data and sort it and sets state when the component mounts and another with `searchString` as a dependency, so we just filter the data whenever the user changes the search query, rather than calling the same data again:
+Initially I called this function in the same `useEffect` where we get the API data, but of course this is unnecessary – we’re processing our data on the front end, so there is no need to get the same data every time the user changes the query. I split this out into two instances of `useEffect`, one to fetch the data and sort it and sets state when the component mounts and another with `searchString` as a dependency, so we just filter the data whenever the user changes the search query, rather than calling the same data again:
 
 ```js
 useEffect(() => {
