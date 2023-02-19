@@ -339,15 +339,19 @@ Once we were happy with our functionality for the deadline, we ended like we sta
 
 <div style='flex-basis: 50%; margin-right: 10px;'>
 
-![Small desktop recipe layout](/readme_assets/project-2-recipe.png)
-![Large desktop recipe layout](/readme_assets/project-2-recipe-responsive_1.png)
-![Tablet recipe layout](/readme_assets/project-2-recipe-responsive_2.png)
+<img src='/readme_assets/project-2-recipe.png' />
+<img src='/readme_assets/project-2-recipe-responsive_1.png' />
+<img src='/readme_assets/project-2-recipe-responsive_2.png' />
+<!-- ![Small desktop recipe layout](/readme_assets/project-2-recipe.png) -->
+<!-- ![Large desktop recipe layout](/readme_assets/project-2-recipe-responsive_1.png) -->
+<!-- ![Tablet recipe layout](/readme_assets/project-2-recipe-responsive_2.png) -->
 
 </div>
 
 <div style='flex-basis: 50%;'>
 
-![Mobile recipe layout](/readme_assets/project-2-recipe-responsive_4.png)
+<img src='/readme_assets/project-2-recipe-responsive_4.png' />
+<!-- ![Mobile recipe layout](/readme_assets/project-2-recipe-responsive_4.png) -->
 
 </div>
 
