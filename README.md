@@ -1,6 +1,6 @@
 # SEI Project 2: RECIPE FINDER
 
-## Description & Deployment Link
+## Project Description & Deployment Link
 
 Recipe Finder is an app to help users decide what to cook next, for a quiet dinner or a dinner party. The app lets users sort by category, as well as search all recipes for a particular dish.
 
