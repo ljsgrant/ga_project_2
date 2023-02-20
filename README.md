@@ -15,10 +15,6 @@ We built this in a team of two, after just over a week of learning React. It was
 
 <br />
 
-
-
-<br />
-
 ## Installation
 
 - Clone the repository
@@ -27,10 +23,6 @@ We built this in a team of two, after just over a week of learning React. It was
 - Run npm start
 - Open http://localhost:3001/ in the browser (or whichever port you are running the app on)
 - Enjoy tasty recipes from around the world
-
-<br />
-
-
 
 <br />
 
@@ -46,20 +38,12 @@ The brief was to build a front-end application using React, with the following c
 
 <br />
 
-
-
-<br />
-
 ## Timeframe & Working Team
 
 This was a 4-day project, working in a team of 2:
 
 - [Louis Grant](https://github.com/ljsgrant/) (me)
 - [Melanie Speckens](https://github.com/elanieca/)
-
-<br />
-
-
 
 <br />
 
@@ -88,10 +72,6 @@ This was a 4-day project, working in a team of 2:
 
 <br />
 
-
-
-<br />
-
 ## Planning
 
 From our first module projects we’d learned the importance of taking time to discuss and plan a project before jumping in and starting to code, and figured this went double when working in a shared repository with the potential for merge conflicts. We were both keen to do something with recipes, and spent the night before the first full project day testing APIs. We settled on TheMealDB as having a good range of data and a variety of endpoints. We then took the first half of our first day as our planning time, drew out wireframes, and figured out which components we’d need so we could divide up responsibilities. We decided on a structure that nested each “page” component within a sidebar nav component:
@@ -102,10 +82,6 @@ From our first module projects we’d learned the importance of taking time to d
 We also made the decision to use a component library. We both wanted to challenge ourselves a bit beyond what we’d covered in class, and decided this was a good opportunity to experiment with Material UI, as a balance between range of features and ease of use. We spent some of our planning time looking through the MUI documentation, making sure we had at least an elementary grasp of how to use MUI components in the project.
 
 Our visual design for the site was inspired by the MUI Paper component, which makes it easy to control the drop shadow and apparent “height” of the component through a single “elevation” prop. As all the recipes in the API are from different sources and cover a load of different cuisines, we wanted the site to have a bit of a scrapbook vibe - like recipes clipped from magazines and stuck in a binder.
-
-<br />
-
-
 
 <br />
 
@@ -329,10 +305,6 @@ Once we were happy with our functionality for the deadline, we ended like we sta
 
 <br />
 
-
-
-<br />
-
 ## Wins
 
 - One of the aspects of this project I’m proudest about was our communication: we always made sure at the beginning of the day to run through everything we wanted to work on in stand-up, made a point of communicating clearly during pull requests, and discussed new features before starting work on them, to make sure we were both on the same page and wouldn’t find ourselves working on the same component. Thanks to this we managed to avoid any merge conflicts, could plan our time to avoid blocking each other, and delivered features and components to each other in time for them to be incorporated into other components.
@@ -351,10 +323,6 @@ Once we were happy with our functionality for the deadline, we ended like we sta
 
 <br />
 
-
-
-<br />
-
 ## Key Learnings/Takeaways
 
 - I started the project feeling like I only had a loose grasp of a lot of the concepts in React, but having the opportunity to pull things apart, break them and then fix them again throughout the project meant that by the deadline I was far more comfortable and confident in my abilities.
@@ -362,17 +330,9 @@ Once we were happy with our functionality for the deadline, we ended like we sta
 
 <br />
 
-
-
-<br />
-
 ## Bugs
 
 - Due to the inconsistent format of recipe data from the API, some recipes don’t play nice with the array methods I’m using to split the ingredients and instructions, giving undesired results. Adding more conditional logic to account for different recipe formats could improve this.
-
-<br />
-
-
 
 <br />
 
