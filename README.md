@@ -15,7 +15,7 @@ We built this in a team of two, after just over a week of learning React. It was
 
 <br />
 
----
+
 
 <br />
 
@@ -30,7 +30,7 @@ We built this in a team of two, after just over a week of learning React. It was
 
 <br />
 
----
+
 
 <br />
 
@@ -46,7 +46,7 @@ The brief was to build a front-end application using React, with the following c
 
 <br />
 
----
+
 
 <br />
 
@@ -59,7 +59,7 @@ This was a 4-day project, working in a team of 2:
 
 <br />
 
----
+
 
 <br />
 
@@ -88,7 +88,7 @@ This was a 4-day project, working in a team of 2:
 
 <br />
 
----
+
 
 <br />
 
@@ -105,7 +105,7 @@ Our visual design for the site was inspired by the MUI Paper component, which ma
 
 <br />
 
----
+
 
 <br />
 
@@ -317,7 +317,7 @@ Once we were happy with our functionality for the deadline, we ended like we sta
 
 <br/>
 
----
+
 
 <br/>
 
@@ -329,7 +329,7 @@ Once we were happy with our functionality for the deadline, we ended like we sta
 
 <br />
 
----
+
 
 <br />
 
@@ -339,7 +339,7 @@ Once we were happy with our functionality for the deadline, we ended like we sta
 - I’m also really happy with how the responsive design for the RecipeShow component turned out, and Mell also did a great job on the responsive design for the landing page. The different UI for desktop, laptop, tablet and mobile screens would be an essential feature to allow users to easily navigate recipes while browsing and cooking in different situations with different devices.
 
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
-| :-------------------------:|:-------------------------: |
+| :-:|:-: |
 | ![Extra large desktop recipe layout](/readme_assets/project-2-recipe-responsive_5.png) ![Large desktop recipe layout](/readme_assets/project-2-recipe.png) ![Small desktop recipe layout](/readme_assets/project-2-recipe-responsive_1.png)  ![Tablet recipe layout](/readme_assets/project-2-recipe-responsive_2.png)   |  ![Mobile recipe layout](/readme_assets/project-2-recipe-responsive_4.png) | 
 
 
@@ -351,7 +351,7 @@ Once we were happy with our functionality for the deadline, we ended like we sta
 
 <br />
 
----
+
 
 <br />
 
@@ -362,7 +362,7 @@ Once we were happy with our functionality for the deadline, we ended like we sta
 
 <br />
 
----
+
 
 <br />
 
@@ -372,7 +372,7 @@ Once we were happy with our functionality for the deadline, we ended like we sta
 
 <br />
 
----
+
 
 <br />
 
