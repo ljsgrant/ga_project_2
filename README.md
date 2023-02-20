@@ -19,9 +19,9 @@ We built this in a team of two, after just over a week of learning React. It was
 
 - Clone the repository
 - cd into the project directory
-- Run npm install
-- Run npm start
-- Open http://localhost:3001/ in the browser (or whichever port you are running the app on)
+- Run `npm install`
+- Run `npm start`
+- In the browser, open the port you're running the development server on (http://localhost:3000/ by default)
 - Enjoy tasty recipes from around the world
 
 <br />
